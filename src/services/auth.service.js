@@ -2,7 +2,7 @@ import config from '../../next.config'
 
 export default {
     register(user) {
-        return fetch("register", {
+        return fetch(`${config.env.API_URL}api/v1/users/register`, {
             method: "POST",
             headers: {
               "content-type": "application/json",
