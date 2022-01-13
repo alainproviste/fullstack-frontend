@@ -1,3 +1,5 @@
+import config from '../../next.config'
+
 export default {
     register(user) {
         return fetch("register", {
