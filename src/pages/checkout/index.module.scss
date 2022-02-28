@@ -1,0 +1,25 @@
+.cart__content {
+    width: 50%;
+    margin: 0 auto;
+    .btn__group {
+        display: flex;
+        align-items: flex-end;
+        margin: 40px 0px;
+    }
+    table {
+        width: 100%;
+        tr {
+            border-bottom: 1px solid lightgray;
+        }
+        thead {
+            width: 20%;
+            td {
+                font-weight: bold;
+            }
+        }
+        td {
+            padding: 20px 0px;
+            width: 20%;
+        }
+    }
+}

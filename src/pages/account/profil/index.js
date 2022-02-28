@@ -5,20 +5,32 @@ import Input from "../../../components/UI/Input/Input";
 import styles from "./index.module.scss";
 import Message from "../../../components/UI/Message/Message";
 import withAuth from "../../../HOC/withAuth";
+import { useMutation } from "@apollo/client";
+import { updateUser } from "../../../graphql/mutations/users";
 const Index = () => {
   const [user, setUser] = useState({});
     const [success, setSuccess] = useState(false);
+    const [updateUser] = useMutation(updateUser);
   const handleSubmit = (e) => {
     e.preventDefault();
     const token = localStorage.getItem("token");
-    authService
-      .updateUser(token, user)
-        .then((data) => {
-            console.log(data);
-            setSuccess(true);
-            setUser(data.user);
-      })
-      .catch((err) => console.log(err));
+    // authService
+    //   .updateUser(token, user)
+    //     .then((data) => {
+    //         console.log(data);
+    //         setSuccess(true);
+    //         setUser(data.user);
+    //   })
+    //   .catch((err) => console.log(err));
+    updateUser({
+      variables: {
+        firstName: user.firstName,
+        lastName: user.lastName
+      },
+      headers: {
+        authorization: token || ""
+      }
+    })
   };
 
   useEffect(() => {    const token = localStorage.getItem("token");

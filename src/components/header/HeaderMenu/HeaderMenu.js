@@ -1,37 +1,33 @@
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
 import styles from "./HeaderMenu.module.scss";
+import {useRouter} from "next/router";
 
 const Headermenu = () => {
-    return (
-        <div className={styles.header__menu}>
-            <nav>
-                <ul>
-                    <li>
-                        <Link href="/">
-                            <a>
-                            Home
-                            </a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/about">
-                            <a>
-                            About
-                            </a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/shop">
-                            <a>
-                            Shop
-                            </a>
-                        </Link>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    );
-}
+  const router = useRouter();
+  return (
+    <div className={styles.header__menu}>
+      <nav>
+        <ul>
+          <li className={router.pathname=="/about" ? styles.active : ""}>
+            <Link href="/about">
+              <a>About</a>
+            </Link>
+          </li>
+          <li className={router.pathname=="/shop" ? styles.active : ""}>
+            <Link href="/shop">
+              <a>Shop</a>
+            </Link>
+          </li>
+          <li className={router.pathname=="/contact" ? styles.active : ""}>
+            <Link href="/contact">
+              <a>Contact</a>
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  );
+};
 
 export default Headermenu;

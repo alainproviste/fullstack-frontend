@@ -2,7 +2,12 @@
     margin: 15px 0px;
     padding: 10px;
     border-radius: 5px;
-    &-warning {}
+    display: inline-block;
+    &__info {
+        background: white;
+        border: 1px solid lightgray;
+        color: black;
+    }
     &__error {
         background: red;
         border: 1px solid red;

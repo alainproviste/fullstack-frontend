@@ -1,0 +1,26 @@
+.product__container {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 0px;
+    .product__img {
+        width: 50%;
+        text-align: center;
+    }
+    .product__content {
+        width: 50%;
+        h1 {
+            margin-bottom: 30px;
+        }
+        .price {
+            font-weight: bold;
+            color: red;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .description {
+            font-size: 15px;
+            line-height: 25px;
+            margin-bottom: 20px;
+        }
+    }
+}

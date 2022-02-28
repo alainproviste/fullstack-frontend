@@ -14,7 +14,9 @@ const Mainlayout = ({children}) => {
                 <HeaderToolbar/>
             </header>
             <main>
-                {children}
+                <div className={styles.container}>
+                    {children}
+                </div>
             </main>
             <footer>
                 <Footer/>
